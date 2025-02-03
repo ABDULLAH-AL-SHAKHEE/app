@@ -1,7 +1,8 @@
 import streamlit as st
 
 # Title
-st.title(" ABDULLAH AL SHAKHEE \n--------------------------\n - Made This BMI Calculator \n - Copyright researved \n--------------------------")
+st.title(" BMI Calculator ")
+st.write(f" MADE BY ABDULLAH AL SHAKHE \n - Copyright researved")
 
 # Sidebar Title
 st.sidebar.title("User Information")
@@ -14,16 +15,15 @@ if name:
 # Sidebar Input: Age
 st.sidebar.write("Select your AGE:")
 age = st.sidebar.number_input("AGE IN YEAR ", min_value=0, max_value=500, value=5, step=1)
-print()
-print()
+st.sidebar.write()
 
 
 # Sidebar Input: Weight
 st.sidebar.write("Select your Weight:")
 kg = st.sidebar.number_input("Kilo Gram", min_value=0, max_value=500, value=5, step=1)
 g = st.sidebar.number_input("Gram", min_value=0, max_value=999, value=7, step=1)
-print()
-print()
+st.sidebar.write()
+
 
 
 # Sidebar Input: Height (Feet & Inches)
@@ -41,7 +41,9 @@ height_meters = (feet * 0.3048) + (inches * 0.0254)
 # BMI Calculation
 if height_meters > 0:
     BMI = float(weight / (height_meters ** 2))
-    st.write(f" Welcome, {name}! Your Age is {age} \n Your height: {feet} feet {inches} inches ({height_meters:.2f} meters) \n And \n ### BMI is **{BMI:.2f} Kg/m²**.")
+    st.write(f" Welcome, {name}!! Your Are {age} Years Old")
+    st.write(f" Your are {feet} feet {inches} inches ({height_meters:.2f} meters) tall")
+    st.write(f" ### BMI is **{BMI:.2f} Kg/m²**.")
     
     # BMI Categories
     if BMI < 18.5:
