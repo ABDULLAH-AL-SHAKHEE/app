@@ -12,26 +12,36 @@ if name:
     st.sidebar.success(f"Hello, {name}! Let's calculate your BMI.")
 
 # Sidebar Input: Age
-age = st.sidebar.slider("Select your age (in Years)", 0, 100, 25)
-st.sidebar.write(f"Your selected age: {age} Years")
+st.sidebar.write("Select your AGE:")
+age = st.sidebar.number_input("AGE IN YEAR ", min_value=0, max_value=500, value=5, step=1)
+print()
+print()
+
 
 # Sidebar Input: Weight
-weight = st.sidebar.slider("Select your weight (in KG)", 0, 200, 25)
-st.sidebar.write(f"Your selected weight: {weight} KG")
+st.sidebar.write("Select your Weight:")
+kg = st.sidebar.number_input("Kilo Gram", min_value=0, max_value=500, value=5, step=1)
+g = st.sidebar.number_input("Gram", min_value=0, max_value=999, value=7, step=1)
+print()
+print()
+
 
 # Sidebar Input: Height (Feet & Inches)
 st.sidebar.write("Select your height:")
 feet = st.sidebar.number_input("Feet", min_value=0, max_value=7, value=5, step=1)
 inches = st.sidebar.number_input("Inches", min_value=0, max_value=11, value=7, step=1)
 
+
 # Convert height to meters
+weight = (kg) + (g / 1000)
 height_meters = (feet * 0.3048) + (inches * 0.0254)
-st.sidebar.write(f"Your height: {feet} feet {inches} inches ({height_meters:.2f} meters)")
+
+
 
 # BMI Calculation
 if height_meters > 0:
     BMI = float(weight / (height_meters ** 2))
-    st.write(f"### Welcome, {name}! Your Age is {age} \n And \n ### BMI is **{BMI:.2f} Kg/m²**.")
+    st.write(f" Welcome, {name}! Your Age is {age} \n Your height: {feet} feet {inches} inches ({height_meters:.2f} meters) \n And \n ### BMI is **{BMI:.2f} Kg/m²**.")
     
     # BMI Categories
     if BMI < 18.5:
