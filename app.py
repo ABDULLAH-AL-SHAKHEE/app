@@ -2,7 +2,7 @@ import streamlit as st
 
 # Title
 st.title(" BMI Calculator ")
-st.write(f" MADE BY ABDULLAH AL SHAKHE \n - Copyright researved")
+st.write(f" - MADE BY ABDULLAH AL SHAKHE \n - Copyright researved \n   \n")
 
 # Sidebar Title
 st.sidebar.title("User Information")
@@ -15,14 +15,14 @@ if name:
 # Sidebar Input: Age
 st.sidebar.write("Select your AGE:")
 age = st.sidebar.number_input("AGE IN YEAR ", min_value=0, max_value=500, value=5, step=1)
-st.sidebar.write()
+st.sidebar.write(f"")
 
 
 # Sidebar Input: Weight
 st.sidebar.write("Select your Weight:")
 kg = st.sidebar.number_input("Kilo Gram", min_value=0, max_value=500, value=5, step=1)
 g = st.sidebar.number_input("Gram", min_value=0, max_value=999, value=7, step=1)
-st.sidebar.write()
+st.sidebar.write(f"")
 
 
 
